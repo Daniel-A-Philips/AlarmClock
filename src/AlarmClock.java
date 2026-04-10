@@ -3,14 +3,14 @@ public class AlarmClock extends Clock {
     private int alarmHour;
     private int alarmMinute;
     private boolean alarmIsAM;
-    private boolean alarmIsOn;
+    private boolean alarmIsOn = false;
 
     public AlarmClock(int hour, int minute, int second, boolean isAM, int alarmHour, int alarmMinute, boolean alarmIsAM) {
         super(hour, minute, second, isAM);
         this.setAlarm(alarmHour, alarmMinute, alarmIsAM);
     }
 
-    private boolean checkTime() {
+    public boolean checkTime() {
         return getHour() == alarmHour &&
                 getMinute() == alarmMinute &&
                 getSecond() == 0 &&
@@ -53,6 +53,10 @@ public class AlarmClock extends Clock {
 
     public String showAlarmTime() {
         return String.format("%d:%02d %s", alarmHour, alarmMinute, alarmIsAM ? "AM" : "PM");
+    }
+
+    public boolean getAlarmIsOn() {
+        return alarmIsOn;
     }
 
 

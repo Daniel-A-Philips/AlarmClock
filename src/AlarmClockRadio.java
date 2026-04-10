@@ -16,7 +16,13 @@ public class AlarmClockRadio {
         alarmClock.setTime(hour, minute, second, isAM);
     }
 
-    public boolean checkAlarm() { return alarmClock.checkAlarm(); }
+    public boolean checkAlarm() {
+        if(alarmClock.getAlarmIsOn() && alarmClock.checkTime()) {
+            System.out.println("The radio is playing " + radio.showStation());
+            return true;
+        }
+        return false;
+    }
 
     public void snooze() { alarmClock.snooze(); }
     public void alarmOff() { alarmClock.alarmOff(); }

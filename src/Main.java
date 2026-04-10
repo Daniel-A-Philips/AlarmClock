@@ -1,6 +1,6 @@
 public class Main {
 
-    void main() {
+    static void main(String[] args) {
         AlarmClockRadio clock = new AlarmClockRadio(8, 0, 0, true, 8, 5, true);
 
         clock.setStation(1060,false);
